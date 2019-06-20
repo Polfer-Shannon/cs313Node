@@ -7,27 +7,27 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <input id="x">
-        <input id="y">
-        <button id="go">+</button>
 
-        <div id="result"></div>
+        <form action ="/math" method="GET">
+            <input type="number" name="number1" id="number1">
+            <select name="operand" id="operand">
+                <option value="plus">plus</option>
+                <option value="minus">minus</option>
+                <option value="times">times</option>
+                <option value="divide">divide</option>
+            </select>
+            <input type="number" name="number2" id="number2">
+            <input type="submit" value="equals">
+        </form>
+        <p><button id="myButton">Ajax Button</button> </p>
+        <div id="ajax_results">
 
-        <script src="add_numbers.js"></script>
+        </div>
+        <script
+            src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous"></script>
+        <script src="math.js"></script>
 
     </body>
-</html>
-examples/intro/add_numbers.js
-"use strict";
-
-function add() {
-var x = Number(document.getElementById('x').value);
-var y = Number(document.getElementById('y').value);
-
-document.getElementById('result').innerHTML = x+y;
-return false;
-}
-
-document.getElementById('go').addEventListener('click', add);
-</body>
 </html>
