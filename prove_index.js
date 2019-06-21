@@ -6,12 +6,12 @@ const app = express();
 app.use(express.static(path.join(__dirname, 'public')));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-app.get('/', (req, res) => res.render('pages/prove_index'));
+app.get('/', (req, res) => res.render('pages/index'));
 app.get('/mail', function (req, res) {
     var number1 = req.query.number1
     var number2 = req.query.number2
     var operand = req.query.operand
-    var result = doMath(number1, number2, operand)
+    var result = doMail(number1, number2, operand)
 
     var params = {
         number1: number1, number2: number2, operand: operand, result: result
@@ -22,16 +22,16 @@ app.get('/mail_service', function (req, res) {
             var number1 = req.query.number1;
             var number2 = req.query.number2;
             var operand = req.query.operand;
-            var result = {result: doMath(number1, number2, operand)};
+            var result = {result: doMail(number1, number2, operand)};
             var stringify = JSON.stringify(result);
             res.writeHead(200, {'Content-Type': 'application/json'});
             res.write(stringify);
             res.end();
 
         })
-app.listen(PORT, () => console.log(`Listening on ${PORT}`))
+.listen(PORT, () => console.log(`Listening on ${PORT}`))
 
-function doMath(number1, number2, operand) {
+function doMail(number1, number2, operand) {
   var result = 0;
   if (operand == 'plus') {
     result = Number(number1) + Number(number2);
