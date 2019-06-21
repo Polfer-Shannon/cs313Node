@@ -1,13 +1,11 @@
-const express = require('express');
-const path = require('path');
-const PORT = process.env.PORT || 5000  //Environment variables - listen on 5000 unless there is a port set.
+require('index.js');
 const app = express();
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.get('/', (req, res) => res.render('pages/index'));
-const getMail = app.get('/mail', function (req, res) {
+ app.get('/mail', function (req, res) {
     var number1 = req.query.number1
     var number2 = req.query.number2
     var operand = req.query.operand
