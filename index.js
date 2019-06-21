@@ -1,7 +1,7 @@
 const cool = require('cool-ascii-faces')
 const express = require('express')
 const path = require('path')
-const PORT = process.env.PORT || 5000
+const PORT = process.env.PORT || 5000  //Environment variables
 
 express()
         .use(express.static(path.join(__dirname, 'public')))
@@ -18,7 +18,7 @@ express()
             var params = {
                 number1: number1, number2: number2, operand: operand, result: result
             }
-            res.render('pages/viewing', params)
+            res.render('pages/team/viewing', params)
         })
         .get('/math_service', function (req, res) {
             var number1 = req.query.number1;
@@ -31,6 +31,14 @@ express()
             res.end();
 
         })
+        
+        .get('/shannon/posts', (req, res) => {
+            res.send(['Morgan', 'Stevie', 'Cheyenne', 'Skyler']);
+        })
+    
+        .get('/shannon/names/:FirstName/:LastName', (req, res) => {
+            res.send(req.params);
+    })
 
         .listen(PORT, () => console.log(`Listening on ${PORT}`))
 
