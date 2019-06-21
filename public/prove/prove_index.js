@@ -7,7 +7,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.get('/', (req, res) => res.render('pages/index'));
-app.get('/mail', function (req, res) {
+const getMail = app.get('/mail', function (req, res) {
     var number1 = req.query.number1
     var number2 = req.query.number2
     var operand = req.query.operand
@@ -18,7 +18,7 @@ app.get('/mail', function (req, res) {
     }
     res.render('pages/prove/mail_view', params)//ejs
 })
-app.get('/mail_service', function (req, res) {
+const getMailService = app.get('/mail_service', function (req, res) {
             var number1 = req.query.number1;
             var number2 = req.query.number2;
             var operand = req.query.operand;
@@ -45,3 +45,4 @@ function doMail(number1, number2, operand) {
   
   return result;
   }
+  
