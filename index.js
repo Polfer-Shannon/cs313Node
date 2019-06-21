@@ -83,6 +83,7 @@ function doMath(number1, number2, operand) {
 function doMailMath(weight, types) {
     var result = 0;
     var price = 0;
+    var message = "";
     if (types == 'stamped') {
         if (weight <= 1)
             price = .55;
@@ -93,7 +94,7 @@ function doMailMath(weight, types) {
         else if (weight <= 3.5)
             price = 1.00;
         else
-            price = 0;
+            message = "Letter is too heavy for stamped mail. Please choose a different mail type.";
     } 
         result = Number(price);
 //    } else if (operand == 'minus') {
