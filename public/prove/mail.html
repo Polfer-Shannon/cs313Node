@@ -6,15 +6,17 @@
     <body>
         
         <form action ="/mail" method="GET">
-            <input type="number" name="number1" id="number1">
-            <select name="operand" id="operand">
-                <option value="plus">plus</option>
-                <option value="minus">minus</option>
-                <option value="times">times</option>
-                <option value="divide">divide</option>
+            <label for="weight">Please enter the weight of the item in ounces.</label>
+            <input type="number" name="weight" id="weight">
+            <label for="types">Choose the type of mail you are sending.</label>
+            <select name="types" id="types">
+                <option value="stamped">Letter(Stamped)</option>
+                <option value="metered">Letter(Metered)</option>
+                <option value="flats">Large Envelopes(Flats)</option>
+                <option value="package">First-Class Package Service</option>
             </select>
-            <input type="number" name="number2" id="number2">
-            <input type="submit" value="equals">
+            
+            <input type="submit" value="Get price">
         </form>
         <p><button id="myButton">Ajax Button</button> </p>
         <div id="ajax_results">
