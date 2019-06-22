@@ -96,14 +96,9 @@ function doMailMath(weight, types) {
         else
             message = "Letter is too heavy for stamped mail. Please choose a different mail type.";
     } 
-        result = Number(price);
-//    } else if (operand == 'minus') {
-//        result = Number(number1) - Number(number2);
-//    } else if (operand == 'times') {
-//        result = Number(number1) * Number(number2);
-//    } else if (operand == 'divide') {
-//        result = Number(number1) / Number(number2);
-//    }
-
-    return result;
+        if (result = Number(price)){
+            return result;
+        }else{
+            return message;
+        }
 }
