@@ -84,7 +84,8 @@ function doMailMath(weight, types) {
     var result = 0;
     var price = 0;
     var message = "";
-    if (types == 'stamped') {
+    
+    if (types == 'stamp') {
         if (weight <= 1)
             price = .55;
         else if (weight <= 2)
@@ -95,8 +96,10 @@ function doMailMath(weight, types) {
             price = 1.00;
         else
             message = "Letter is too heavy for stamped mail. Please choose a different mail type.";
+           
     }
     if (types == 'metered') {
+        
         if (weight <= 1)
             price = .50;
         else if (weight <= 2)
@@ -109,6 +112,7 @@ function doMailMath(weight, types) {
             message = "Letter is too heavy for metered mail. Please choose a different mail type.";
     }
     if (types == 'flats') {
+        
         if (weight <= 1)
             price = 1.00;
         else if (weight <= 2)
@@ -139,6 +143,7 @@ function doMailMath(weight, types) {
             message = "Envelope is too heavy. Please choose the package mail type.";
     }
     if (types == 'package') {
+        
         if (weight <= 4)
             price = 3.66;
         else if (weight > 4 && weight <= 8)
@@ -151,7 +156,7 @@ function doMailMath(weight, types) {
             message = "Package is too heavy for first class mail.";
     }
     if (result = Number(price)) {
-        return 'Your price is: ' + result;
+        return result;
 
     } else if (result = message) {
         return message;

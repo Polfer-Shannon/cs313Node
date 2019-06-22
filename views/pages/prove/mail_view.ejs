@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-
 <html>
     <head>
-        <title>Mail</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <% include ../../partials/apphead.ejs %>
     </head>
+    <header class="jumbotron">
+        <h1>Welcome to the Post Office</h1>
+    </header>
     <body>
-      <%= weight %>  
-      <%= types %> 
-     
-      <%= result %>
-     
+        <div class="container">
+            
+            <p>Your item weighs:  <%= weight %> oz </p> 
+            <p>The mail product you chose is: <%= types %></p>
+            <p>The price of your postage is $<%= result %></p>
+        </div>
     </body>
 </html>
