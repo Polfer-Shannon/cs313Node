@@ -95,10 +95,65 @@ function doMailMath(weight, types) {
             price = 1.00;
         else
             message = "Letter is too heavy for stamped mail. Please choose a different mail type.";
-    } 
-        if (result = Number(price)){
-            return result;
-        }else{
-            return message;
-        }
+    }
+    if (types == 'metered') {
+        if (weight <= 1)
+            price = .50;
+        else if (weight <= 2)
+            price = .65;
+        else if (weight <= 3)
+            price = .80;
+        else if (weight <= 3.5)
+            price = .95;
+        else
+            message = "Letter is too heavy for metered mail. Please choose a different mail type.";
+    }
+    if (types == 'flats') {
+        if (weight <= 1)
+            price = 1.00;
+        else if (weight <= 2)
+            price = 1.15;
+        else if (weight <= 3)
+            price = 1.30;
+        else if (weight <= 4)
+            price = 1.45;
+        else if (weight <= 5)
+            price = 1.60;
+        else if (weight <= 6)
+            price = 1.75;
+        else if (weight <= 7)
+            price = 1.90;
+        else if (weight <= 8)
+            price = 2.05;
+        else if (weight <= 9)
+            price = 2.20;
+        else if (weight <= 10)
+            price = 2.35;
+        else if (weight <= 11)
+            price = 2.50;
+        else if (weight <= 12)
+            price = 2.65;
+        else if (weight <= 13)
+            price = 2.80;
+        else
+            message = "Envelope is too heavy. Please choose the package mail type.";
+    }
+    if (types == 'package') {
+        if (weight <= 4)
+            price = 3.66;
+        else if (weight > 4 && weight <= 8)
+            price = 4.39;
+        else if (weight > 8 && weight <= 12)
+            price = 5.19;
+        else if (weight > 12 && weight <= 13)
+            price = 5.71;
+        else
+            message = "Package is too heavy for first class mail.";
+    }
+    if (result = Number(price)) {
+        return 'Your price is: ' + result;
+
+    } else if (result = message) {
+        return message;
+    }
 }
