@@ -39,7 +39,7 @@ app.get('/math_service', function (req, res) {
 app.get('/mail', function (req, res) {
     var weight = req.query.weight
     var types = req.query.types
-    var result = doMailMath(weight, types)
+    var result = calculateRate(weight, types)
 
     var params = {
         weight: weight, types: types, result: result
@@ -51,7 +51,7 @@ app.get('/mail', function (req, res) {
 app.get('/mail_service', function (req, res) {
     var weight = req.query.weight;
     var types = req.query.types;
-    var result = {result: doMailMath(weight, types)};
+    var result = {result: calculateRate(weight, types)};
     var stringify = JSON.stringify(result);
     res.writeHead(200, {'Content-Type': 'application/json'});
     res.write(stringify);
@@ -80,7 +80,7 @@ function doMath(number1, number2, operand) {
 
 
 //Prove wk9 ('/mail)
-function doMailMath(weight, types) {
+function calculateRate(weight, types) {
     var result = 0;
     var price = 0;
     var message = "";
