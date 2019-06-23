@@ -17,19 +17,19 @@
         <form action ="/mail" method="GET">
             <div class="form-group">
             <label for="weight">Please enter the weight of the item in ounces.</label>
-            <input type="number" name="weight" class="form-control" id="weight">
+            <input type="number" min="0" value="0" step="0.01" name="weight" class="form-control" id="weight">
             <label for="types">Choose the type of mail you are sending.</label>
             <select name="types" class="form-control" id="types">
-                <option value="stamp">Letter(Stamped)</option>
-                <option value="metered">Letter(Metered)</option>
-                <option value="flats">Large Envelopes(Flats)</option>
-                <option value="package">First-Class Package Service</option>
+                <option value="stamp">Letter(Stamped)- up to 3.5 oz</option>
+                <option value="metered">Letter(Metered)- up to 3.5 oz</option>
+                <option value="flats">Large Envelopes(Flats)- up to 13 oz</option>
+                <option value="package">First-Class Package Service - up to 13 oz</option>
             </select>
             </div>
-            <input type="submit" value="Get price" class="btn btn-primary">
+            <input type="submit" value="Get Price Details" class="btn btn-primary">
         </form>
             <br>
-        <p><button class="btn btn-primary" id="myButton">Ajax Button</button> </p>
+        <p><button class="btn btn-primary" id="myButton">Quick Price Button</button> </p>
         <div id="ajax_results">
             
         </div>

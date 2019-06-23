@@ -156,7 +156,7 @@ function doMailMath(weight, types) {
             message = "Package is too heavy for first class mail.";
     }
     if (result = Number(price)) {
-        return result;
+        return 'The price of your postage is $' + result;
 
     } else if (result = message) {
         return message;
